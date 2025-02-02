@@ -5,7 +5,7 @@ import deleteIcon from "./assets/deleteIcon.png"
 function ToDoList({ handleEditClick, isEditClicked, tasks, markAsDone, deleteTask }) {
     return (
         <div className="todos-list-container">
-            {tasks.length === 0 && <h3 style={{ textAlign: "center" }}>No tasks to show</h3>}
+            {tasks.length === 0 && <h3 style={{ textAlign: "center"}}>No tasks to show</h3>}
             {
                 tasks.map((task) => (
                     <div key={task.id} className="todo-parant">
