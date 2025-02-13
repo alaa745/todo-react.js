@@ -1,17 +1,21 @@
+import { useContext } from "react";
 import AddBtn from "./AddBtn";
+import { TodoListContext } from "./contexts/TodoListContext";
 
-function TaskText({ editTask, isEditClicked, taskName, setNewTask, addTask }) {
+function TaskText() {
+    const { taskTitle, setNewTask, isEditClicked } = useContext(TodoListContext);
+
     return (
         <div className="text-container">
             <input
                 type="text"
                 className="text"
                 placeholder="What do you need to do?"
-                value={taskName}
+                value={taskTitle}
                 onChange={(e) => {
                     setNewTask(e.target.value);
                 }} />
-            <AddBtn editTask={editTask} isEditClicked={isEditClicked} addTask={addTask}></AddBtn>
+            <AddBtn  ></AddBtn>
         </div>
     );
 }

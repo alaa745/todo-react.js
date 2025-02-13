@@ -1,4 +1,9 @@
-function Nav({ setNewTask, isPersonalClicked, isProfClicked, setPersonalIsClicked, setProfIsClicked }) {
+import { useContext } from "react";
+import { TodoListContext } from "./contexts/TodoListContext";
+
+function Nav() {
+    const { setNewTask, isPersonalClicked, setPersonalIsClicked, isProfClicked, setProfIsClicked } = useContext(TodoListContext);
+
     const tab1Style = {
         color: isPersonalClicked ? "black" : "grey",
         borderBottom: isPersonalClicked ? "3px solid rgba(217, 131, 38, 1)" : "none",
